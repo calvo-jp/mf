@@ -36,6 +36,12 @@ export default function Bored() {
         <title>Bored</title>
       </Head>
 
+      {authenticated && (
+        <Text marginBottom={4} fontSize="sm">
+          You are logged in
+        </Text>
+      )}
+
       <Card
         title="Bored?"
         body={
@@ -63,12 +69,6 @@ export default function Bored() {
           </Button>
         }
       />
-
-      {authenticated && (
-        <Text marginTop={2} marginLeft={2} fontSize="sm">
-          Get up lazy ass!
-        </Text>
-      )}
     </>
   );
 }

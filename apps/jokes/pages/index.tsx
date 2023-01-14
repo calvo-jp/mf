@@ -36,6 +36,12 @@ export default function Jokes() {
         <title>Jokes</title>
       </Head>
 
+      {authenticated && (
+        <Text marginBottom={4} fontSize="sm">
+          You are logged in
+        </Text>
+      )}
+
       <Card
         title="Joke!"
         body={
@@ -70,12 +76,6 @@ export default function Jokes() {
           </Button>
         }
       />
-
-      {authenticated && (
-        <Text marginTop={2} marginLeft={2} fontSize="sm">
-          Are you laughing?
-        </Text>
-      )}
     </>
   );
 }
