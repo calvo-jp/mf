@@ -1,0 +1,56 @@
+{
+  "name": "jokes",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/jokes",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/jokes",
+        "outputPath": "dist/apps/jokes"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/jokes"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "jokes:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "jokes:build:development",
+          "dev": true,
+          "port": 3001
+        },
+        "production": {
+          "buildTarget": "jokes:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "jokes:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/jokes/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
