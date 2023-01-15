@@ -12,17 +12,12 @@ const nextConfig = {
     svgr: false,
   },
   swcMinify: false,
-  webpack(config, { isServer }) {
-    const subpath = isServer ? 'ssr' : 'chunks';
-
+  webpack(config) {
     config.cache = true;
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'jokes',
+        name: 'news',
         filename: 'static/chunks/remoteEntry.js',
-        remotes: {
-          '@remotes/news': `news@http://localhost:3003/_next/static/${subpath}/remoteEntry.js`,
-        },
         shared: {
           '@chakra-ui/react': {
             singleton: true,
@@ -50,7 +45,7 @@ const nextConfig = {
           },
         },
         exposes: {
-          './Jokes': './pages/index.tsx',
+          './News': './pages/index.tsx',
         },
         extraOptions: {
           enableImageLoaderFix: true,

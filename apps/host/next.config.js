@@ -23,6 +23,7 @@ const nextConfig = {
         remotes: {
           '@remotes/jokes': `jokes@http://localhost:3001/_next/static/${subpath}/remoteEntry.js`,
           '@remotes/bored': `bored@http://localhost:3002/_next/static/${subpath}/remoteEntry.js`,
+          '@remotes/news': `news@http://localhost:3003/_next/static/${subpath}/remoteEntry.js`,
         },
         shared: {
           '@chakra-ui/react': {
@@ -61,6 +62,9 @@ const nextConfig = {
   },
   experimental: {
     esmExternals: false,
+  },
+  images: {
+    domains: ['dynaimage.cdn.cnn.com'],
   },
 };
 

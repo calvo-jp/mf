@@ -1,8 +1,7 @@
-import { Box } from '@chakra-ui/react';
-import { PropsWithChildren } from 'react';
+import { Box, BoxProps } from '@chakra-ui/react';
 import { Navbar } from './Navbar';
 
-export function Layout({ children }: PropsWithChildren) {
+export function Layout({ children, ...props }: BoxProps) {
   return (
     <Box minHeight="100vh">
       <Navbar />
@@ -14,6 +13,7 @@ export function Layout({ children }: PropsWithChildren) {
           md: 8,
           lg: 16,
         }}
+        {...props}
       >
         {children}
       </Box>

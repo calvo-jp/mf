@@ -14,7 +14,9 @@ export function Card({ body, title, footer }: CardProps) {
       border="1px"
       borderColor="gray.200"
       rounded="md"
-      maxWidth="600px"
+      width="560px"
+      maxWidth="full"
+      flexShrink={0}
     >
       <Heading>{title}</Heading>
 

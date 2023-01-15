@@ -4,8 +4,3 @@ declare module '*.svg' {
   export const ReactComponent: any;
   export default content;
 }
-
-declare module '@remotes/*' {
-  export const Component: React.FC<any>;
-  export default Component;
-}

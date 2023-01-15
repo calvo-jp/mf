@@ -12,7 +12,7 @@ export default function Host() {
         <title>Host</title>
       </Head>
 
-      <Box maxWidth="400px">
+      <Box maxWidth="500px">
         {authenticated && (
           <Text marginBottom={4} fontSize="sm">
             You are logged in
