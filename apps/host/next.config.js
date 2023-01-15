@@ -51,6 +51,7 @@ const nextConfig = {
           },
         },
         extraOptions: {
+          enableImageLoaderFix: true,
           automaticAsyncBoundary: true,
         },
       })

@@ -48,6 +48,7 @@ const nextConfig = {
           './Jokes': './pages/index.tsx',
         },
         extraOptions: {
+          enableImageLoaderFix: true,
           automaticAsyncBoundary: true,
         },
       })

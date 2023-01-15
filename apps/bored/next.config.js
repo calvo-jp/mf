@@ -48,6 +48,7 @@ const nextConfig = {
           './Bored': './pages/index.tsx',
         },
         extraOptions: {
+          enableImageLoaderFix: true,
           automaticAsyncBoundary: true,
         },
       })
